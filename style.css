@@ -1,0 +1,214 @@
+:root {
+    --cor-primaria: #7d8ea0;
+    --cor-secundaria: #ffffffcb;
+    --cor-terciaria: #2e2d2d;
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+body {
+    background-color: var(--cor-primaria);
+    font-family: var(--fonte-secundaria);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 150%;
+    background-image: url('img/blackground.png');
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center center;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.cabecalho {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88rem; 
+    height: 2rem; 
+    background-color: var(--cor-terciaria);
+    padding: 0 1.25rem; 
+    z-index: 1;
+    border: 0.06rem solid var(--cor-primaria);
+}
+
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    height: 0.1875rem; 
+    width: 1.5625rem; 
+    background: var(--cor-secundaria);
+    margin-bottom: 0.25rem; 
+    border-radius: 0.3125rem; 
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 0.625rem; 
+}
+
+.menu li a {
+    color: var(--cor-secundaria);
+    font-size: 1.125rem;
+}
+
+.contatos {
+    display: flex;
+    gap: 15.625rem; 
+}
+
+.corpo {
+    padding: 5rem 1.25rem 1.25rem 1.25rem; 
+    display: flex;
+    flex-direction: column;
+}
+
+.corpo h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.625rem; 
+}
+
+.corpo-formacao {
+    padding: 1.25rem 1.25rem 11.25rem 1.25rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.corpo-historico {
+    padding: 5rem 21.875rem 5rem 21.875rem; 
+    display: flex;
+    flex-direction: column;
+}
+
+.corpo-historico h1, h3, h4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.corpo-sobre {
+    padding: 3.125rem 21.875rem 12.5rem 21.875rem; 
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.corpo-sobre h1 {
+    text-align: center;
+}
+
+.corpo-cursos {
+    padding: 1.25rem 1.25rem 6.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.corpo-cursos h4, h6 {
+    align-items: left;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--cor-terciaria);
+    position: fixed;
+    bottom: 0;
+    border: 0.06rem solid var(--cor-primaria);
+}
+
+@media (max-width: 41.25rem) { 
+    .menu-hamburguer {
+        display: flex;
+    }
+    .menu {
+        flex-direction: column;
+        background-color: var(--cor-terciaria);
+        position: absolute;
+        top: 3.75rem; 
+        right: -100%;
+        width: 12.5rem; 
+        height: calc(100vh - 3.75rem); 
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0.625rem; 
+        transition: right 0.3s ease-in-out;
+    }
+    .menu li {
+        margin: 0.625rem 0; 
+    }
+    .menu.open {
+        right: 0;
+    }
+}
+
+#foto-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem; 
+}
+
+.contato-foto {
+    width: 15rem;
+    height: 25rem;
+    border: 0.125rem solid black;
+}
+
+.botoes {
+    display: flex;
+    gap: 0.625rem; 
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.button {
+    display: inline-block;
+    padding: 0.625rem 0.625rem 0.3125rem 0.625rem;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: 0.3125rem; /* 5px */
+    font-size: 1rem; /* 16px */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 0.06rem solid var(--cor-primaria);
+}
+
+.button:hover {
+    background-color: var(--cor-primaria);
+}
+
+h1, h2, h5, h6, p {
+    margin-bottom: 0.9375rem; 
+}
