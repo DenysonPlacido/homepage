@@ -17,6 +17,7 @@ body {
     background-color: var(--cor-primaria);
     font-family: var(--fonte-secundaria);
     position: relative;
+    /* Oculta qualquer conteúdo que transborde horizontalmente */
     overflow-x: hidden;
 }
 
@@ -39,26 +40,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 88rem; 
+    width: 100%; 
     height: 2rem; 
     background-color: var(--cor-terciaria);
     padding: 0 1.25rem; 
+    /* determina quais elementos aparecem na frente ou atrás de outros elementos na página */
     z-index: 1;
     border: 0.06rem solid var(--cor-primaria);
-}
-
-.menu-hamburguer {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-hamburguer span {
-    height: 0.1875rem; 
-    width: 1.5625rem; 
-    background: var(--cor-secundaria);
-    margin-bottom: 0.25rem; 
-    border-radius: 0.3125rem; 
 }
 
 .menu {
@@ -75,15 +63,23 @@ body {
     font-size: 1.125rem;
 }
 
-.contatos {
+/* todo o main*/
+.corpo-index {
+    padding: 3rem 1.25rem 1.25rem 1.25rem; 
     display: flex;
-    gap: 15.625rem; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.corpo-index h1 {
+    padding: 0 0 0.5rem 0;
 }
 
 .corpo {
-    padding: 5rem 1.25rem 1.25rem 1.25rem; 
+    padding: 3rem 1.25rem 1.25rem 1.25rem; 
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .corpo h1 {
@@ -93,95 +89,11 @@ body {
     padding: 0.625rem; 
 }
 
-.corpo-formacao {
-    padding: 1.25rem 1.25rem 11.25rem 1.25rem; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.corpo-historico {
-    padding: 5rem 21.875rem 5rem 21.875rem; 
-    display: flex;
-    flex-direction: column;
-}
-
-.corpo-historico h1, h3, h4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.corpo-sobre {
-    padding: 3.125rem 21.875rem 12.5rem 21.875rem; 
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-}
-
-.corpo-sobre h1 {
-    text-align: center;
-}
-
-.corpo-cursos {
-    padding: 1.25rem 1.25rem 6.25rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.corpo-cursos h4, h6 {
-    align-items: left;
-}
-
-.rodape {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 2rem;
-    background-color: var(--cor-terciaria);
-    position: fixed;
-    bottom: 0;
-    border: 0.06rem solid var(--cor-primaria);
-}
-
-@media (max-width: 41.25rem) { 
-    .menu-hamburguer {
-        display: flex;
-    }
-    .menu {
-        flex-direction: column;
-        background-color: var(--cor-terciaria);
-        position: absolute;
-        top: 3.75rem; 
-        right: -100%;
-        width: 12.5rem; 
-        height: calc(100vh - 3.75rem); 
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 0.625rem; 
-        transition: right 0.3s ease-in-out;
-    }
-    .menu li {
-        margin: 0.625rem 0; 
-    }
-    .menu.open {
-        right: 0;
-    }
-}
-
-#foto-perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.25rem; 
-}
-
 .contato-foto {
     width: 15rem;
     height: 25rem;
     border: 0.125rem solid black;
+    padding: 0.25rem;
 }
 
 .botoes {
@@ -189,7 +101,7 @@ body {
     gap: 0.625rem; 
     flex-wrap: wrap;
     justify-content: center;
-    
+    padding: 0.5rem 0;
 }
 
 .button {
@@ -209,6 +121,86 @@ body {
     background-color: var(--cor-primaria);
 }
 
-h1, h2, h5, h6, p {
-    margin-bottom: 0.9375rem; 
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--cor-terciaria);
+    position: fixed;
+    bottom: 0;
+    border: 0.06rem solid var(--cor-primaria);
+}
+
+
+/* ******************************************** */
+
+.corpo-historico {
+    padding: 4rem 21.875rem 5rem 21.875rem; 
+    display: flex;
+    flex-direction: column;
+}
+
+.corpo-historico h1, h3, h4 {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 0.5rem 0 0 0;
+}
+
+.corpo-historico p {
+    padding: 0.5rem 0 0 0;
+}
+
+.corpo-formacao {
+    padding: 1.25rem 1.25rem 11.25rem 1.25rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.corpo-formacao h2 {
+    padding: 1rem;
+}
+
+.corpo-sobre {
+    padding: 3.125rem 21.875rem 12.5rem 21.875rem; 
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.corpo-sobre h1 {
+    text-align: center;
+}
+
+.corpo-cursos {
+    padding: 1.25rem 1.25rem 6.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.corpo-cursos h2{
+    text-align: left;
+}
+
+
+
+@media (max-width: 800px) { 
+    /* .menu-hamburguer {
+        display: flex;
+    } */
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+}
+
+#foto-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem; 
 }
