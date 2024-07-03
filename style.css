@@ -9,7 +9,6 @@
 * {
     padding: 0;
     margin: 0;
-    text-decoration: none;
     color: var(--cor-secundaria);
 }
 
@@ -21,13 +20,13 @@ body {
 }
 
 .background-image {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 110%;
-    height: 150%;
+    width: 100vw;
+    height: 100vh;
     background-image: url('img/blackground.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: repeat;
     background-position: center center;
     opacity: 0.6;
@@ -44,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 84rem;
+    width: 100%;
     background-color: var(--cor-terciaria);
     padding: 0.5rem 1.25rem;
     z-index: 1;
@@ -66,6 +65,19 @@ body {
     color: var(--cor-secundaria);
     font-size: 1.125rem;
 }
+
+#foto-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2;
+}
+
+.contato-foto {
+    width: 240px;
+    height: 400px;
+}
+
 
 .corpo-index {
     padding: 3rem 1.25rem 1.25rem 1.25rem;
@@ -92,11 +104,15 @@ body {
     padding: 0.625rem;
 }
 
-.contato-foto {
-    width: 15rem;
-    height: 25rem;
-    border: 0.125rem solid black;
-    padding: 0.25rem;
+.corpo-sobre {
+    padding: 3.125rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.corpo-sobre h1 {
+    text-align: center;
 }
 
 .botoes {
@@ -128,7 +144,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 84rem;
+    width: 100vw; 
     height: 2rem;
     background-color: var(--cor-terciaria);
     position: fixed;
@@ -137,7 +153,7 @@ body {
 }
 
 .corpo-historico {
-    padding: 4rem 21.875rem 5rem 21.875rem;
+    padding: 4rem 1.25rem;
     display: flex;
     flex-direction: column;
 }
@@ -163,17 +179,6 @@ body {
     padding: 1rem;
 }
 
-.corpo-sobre {
-    padding: 3.125rem 21.875rem 12.5rem 21.875rem;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-}
-
-.corpo-sobre h1 {
-    text-align: center;
-}
-
 .corpo-cursos {
     padding: 1.25rem 1.25rem 6.25rem 1.25rem;
     display: flex;
@@ -181,34 +186,60 @@ body {
     text-align: center;
 }
 
-.corpo-cursos h2 {
-    text-align: left;
-}
-
 @media (max-width: 800px) {
     .material-symbols-outlined {
-        display: block; /* Mostra o ícone do menu hamburguer */
-        cursor: pointer; /* Altera o cursor para indicar que é clicável */
+        display: block;
+        cursor: pointer;
     }
 
     .cabecalho {
-        width: 84%; /* Ajusta a largura para ocupar toda a largura disponível */
-        padding: 0.5rem 1.25rem; /* Mantém o padding para espaçamento */
+        width: 100%; 
+        padding: 0.5rem 1.25rem;
     }
 
     .menu {
-        display: none; /* Esconde o menu por padrão */
-        flex-direction: column; /* Alinha os itens do menu verticalmente */
-        align-items: center; /* Centraliza os itens do menu horizontalmente */
-        width: 100%; /* Ajusta a largura para ocupar toda a largura disponível */
-        padding: 0.5rem 0; /* Espaçamento interno para os itens do menu */
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem 0;
     }
 
     .menu.active {
-        display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+        display: flex;
     }
 
     .menu li {
-        margin: 0.625rem 0; /* Espaçamento entre os itens do menu */
+        margin: 0.625rem 0;
     }
+
+    .corpo-sobre {
+        padding: 1.25rem; 
+    }
+
+    #foto-perfil {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .contato-foto {
+        width: 240px;
+        height: 400px;
+    }
+
+    .rodape {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        height: 2rem;
+        background-color: var(--cor-terciaria);
+        position: fixed;
+        bottom: 0;
+        border: 0.06rem solid var(--cor-primaria);
+    }
+
+
 }
