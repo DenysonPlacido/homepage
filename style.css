@@ -17,7 +17,6 @@ body {
     background-color: var(--cor-primaria);
     font-family: var(--fonte-secundaria);
     position: relative;
-    /* Oculta qualquer conteúdo que transborde horizontalmente */
     overflow-x: hidden;
 }
 
@@ -35,16 +34,19 @@ body {
     z-index: -1;
 }
 
+.material-symbols-outlined {
+    display: none;
+    cursor: pointer;
+}
+
 .cabecalho {
     position: fixed;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%; 
-    height: 2rem; 
+    width: 84rem;
     background-color: var(--cor-terciaria);
-    padding: 0 1.25rem; 
-    /* determina quais elementos aparecem na frente ou atrás de outros elementos na página */
+    padding: 0.5rem 1.25rem;
     z-index: 1;
     border: 0.06rem solid var(--cor-primaria);
 }
@@ -52,10 +54,12 @@ body {
 .menu {
     display: flex;
     list-style: none;
+    justify-content: center;
+    width: 100%;
 }
 
 .menu li {
-    margin: 0 0.625rem; 
+    margin: 0 0.625rem;
 }
 
 .menu li a {
@@ -63,9 +67,8 @@ body {
     font-size: 1.125rem;
 }
 
-/* todo o main*/
 .corpo-index {
-    padding: 3rem 1.25rem 1.25rem 1.25rem; 
+    padding: 3rem 1.25rem 1.25rem 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,7 +79,7 @@ body {
 }
 
 .corpo {
-    padding: 3rem 1.25rem 1.25rem 1.25rem; 
+    padding: 3rem 1.25rem 1.25rem 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +89,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.625rem; 
+    padding: 0.625rem;
 }
 
 .contato-foto {
@@ -98,7 +101,7 @@ body {
 
 .botoes {
     display: flex;
-    gap: 0.625rem; 
+    gap: 0.625rem;
     flex-wrap: wrap;
     justify-content: center;
     padding: 0.5rem 0;
@@ -110,8 +113,8 @@ body {
     background-color: var(--cor-terciaria);
     color: var(--cor-secundaria);
     border: none;
-    border-radius: 0.3125rem; /* 5px */
-    font-size: 1rem; /* 16px */
+    border-radius: 0.3125rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
     border: 0.06rem solid var(--cor-primaria);
@@ -125,7 +128,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 84rem;
     height: 2rem;
     background-color: var(--cor-terciaria);
     position: fixed;
@@ -133,11 +136,8 @@ body {
     border: 0.06rem solid var(--cor-primaria);
 }
 
-
-/* ******************************************** */
-
 .corpo-historico {
-    padding: 4rem 21.875rem 5rem 21.875rem; 
+    padding: 4rem 21.875rem 5rem 21.875rem;
     display: flex;
     flex-direction: column;
 }
@@ -145,7 +145,6 @@ body {
 .corpo-historico h1, h3, h4 {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding: 0.5rem 0 0 0;
 }
 
@@ -154,7 +153,7 @@ body {
 }
 
 .corpo-formacao {
-    padding: 1.25rem 1.25rem 11.25rem 1.25rem; 
+    padding: 1.25rem 1.25rem 11.25rem 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,7 +164,7 @@ body {
 }
 
 .corpo-sobre {
-    padding: 3.125rem 21.875rem 12.5rem 21.875rem; 
+    padding: 3.125rem 21.875rem 12.5rem 21.875rem;
     display: flex;
     flex-direction: column;
     text-align: justify;
@@ -182,25 +181,34 @@ body {
     text-align: center;
 }
 
-.corpo-cursos h2{
+.corpo-cursos h2 {
     text-align: left;
 }
 
+@media (max-width: 800px) {
+    .material-symbols-outlined {
+        display: block; /* Mostra o ícone do menu hamburguer */
+        cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    }
 
+    .cabecalho {
+        width: 84%; /* Ajusta a largura para ocupar toda a largura disponível */
+        padding: 0.5rem 1.25rem; /* Mantém o padding para espaçamento */
+    }
 
-@media (max-width: 800px) { 
-    /* .menu-hamburguer {
-        display: flex;
-    } */
     .menu {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-}
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column; /* Alinha os itens do menu verticalmente */
+        align-items: center; /* Centraliza os itens do menu horizontalmente */
+        width: 100%; /* Ajusta a largura para ocupar toda a largura disponível */
+        padding: 0.5rem 0; /* Espaçamento interno para os itens do menu */
+    }
 
-#foto-perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.25rem; 
+    .menu.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+    }
+
+    .menu li {
+        margin: 0.625rem 0; /* Espaçamento entre os itens do menu */
+    }
 }
